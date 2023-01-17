@@ -24,7 +24,7 @@ const styles = StyleSheet.create({
   headingText: {
     color: '#fff',
     textAlign: 'center',
-    fontSize: 20,
-    fontWeight: '600',
+    fontSize: 26,
+    fontWeight: '500',
   },
 });

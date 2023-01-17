@@ -1,33 +1,51 @@
-import {StyleSheet, Text, View, Image} from 'react-native';
 import React from 'react';
+import {Text, View} from 'react-native';
+import {NavigationContainer} from '@react-navigation/native';
+import {createMaterialTopTabNavigator} from '@react-navigation/material-top-tabs';
 
-const test = () => {
+function HomeScreen() {
   return (
-    <View>
-      <View
-        style={{
-          //make overlay
-          position: 'absolute',
-          top: 0,
-          left: 0,
-          right: 0,
-          bottom: 0,
-          //change this color to the other one which you want
-          backgroundColor: '#000000c0',
-        }}
-      />
-      <Image
-        source={require('./assets/Group_34.png')}
-        style={{
-          height: '100%',
-          width: '100%',
-          resizeMode: 'cover',
-        }}
-      />
+    <View style={{flex: 1, justifyContent: 'center', alignItems: 'center'}}>
+      <Text>Home!</Text>
     </View>
+  );
+}
+
+function SettingsScreen() {
+  return (
+    <View style={{flex: 1, justifyContent: 'center', alignItems: 'center'}}>
+      <Text>Settings!</Text>
+    </View>
+  );
+}
+
+const Tab = createMaterialTopTabNavigator();
+
+const Test = () => {
+  // var radiogroup_options = [
+  //   {id: 0, label: 'Button1'},
+  //   {id: 1, label: 'Button2'},
+  //   {id: 2, label: 'Button3'},
+  //   {id: 3, label: 'Button4'},
+  // ];
+
+  return (
+    // <View style={{backgroundColor: 'red'}}>
+    //   <RadioGroup
+    //     horizontal
+    //     options={radiogroup_options}
+    //     style={{color: 'red'}}
+    //   />
+    // </View>
+    <NavigationContainer>
+      <Tab.Navigator>
+        <Tab.Screen name="Home" component={HomeScreen} />
+        <Tab.Screen name="Settings" component={SettingsScreen} />
+      </Tab.Navigator>
+    </NavigationContainer>
   );
 };
 
-export default test;
+export default Test;
 
-const styles = StyleSheet.create({});
+// const styles = StyleSheet.create({});

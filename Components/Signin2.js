@@ -66,13 +66,15 @@ const Signin2 = ({navigation}) => {
               <Text style={styles.globalbtnText}>Sign In</Text>
             </TouchableOpacity>
 
-            <TouchableOpacity style={styles.bottomText}>
-              <Text style={styles.normalText}>Create a new Account ?</Text>
-              <Text
-                style={styles.navText}
-                onPress={() => navigation.navigate('SignupScreen')}>
-                Sign up
-              </Text>
+            <TouchableOpacity style={styles.bottomTextContainer}>
+              <View style={styles.bottomText}>
+                <Text style={styles.normalText}>Create a new Account ?</Text>
+                <Text
+                  style={styles.navText}
+                  onPress={() => navigation.navigate('SignupScreen')}>
+                  Sign Up
+                </Text>
+              </View>
             </TouchableOpacity>
           </View>
         </ImageBackground>
@@ -168,5 +170,16 @@ const styles = StyleSheet.create({
     color: '#14A800',
     fontSize: 16,
     marginLeft: 5,
+  },
+  bottomTextContainer: {
+    flexDirection: 'row',
+    width: width - 50,
+    justifyContent: 'flex-end',
+    alignSelf: 'center',
+    alignItems: 'center',
+    margin: 20,
+  },
+  bottomText: {
+    flexDirection: 'row',
   },
 });

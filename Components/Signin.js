@@ -20,7 +20,7 @@ const Signup = ({navigation}) => {
       <View style={styles.bodyContainer}>
         <Image
           source={require('./assets/logo.png')}
-          style={{marginVertical: 20}}
+          style={{marginVertical: 20, alignSelf: 'center'}}
         />
         <Text style={styles.mainText}>Sign In</Text>
         <Text style={styles.subText}>Welcome To Pak Kissan</Text>
@@ -54,23 +54,29 @@ const Signup = ({navigation}) => {
             disabled={false}
             value={toggleCheckBox}
             onValueChange={newValue => setToggleCheckBox(newValue)}
-            style={{color: 'red'}}
+            //style={{color: 'red', tintColor: 'blue', onCheckColor: 'pink'}}
+            tintColor="blue"
+            onCheckColor="pink"
+            onTintColor="gray"
           />
 
-          <Text>Forget Password</Text>
+          <Text style={{color: '#14A800'}}>Keep me logged in</Text>
+          <Text style={styles.forgotpass}>Forget Password</Text>
         </View>
 
         <TouchableOpacity style={styles.globalbtn}>
           <Text style={styles.globalbtnText}>Sign In</Text>
         </TouchableOpacity>
 
-        <TouchableOpacity style={styles.bottomText}>
-          <Text style={styles.normalText}>Create a new Account ?</Text>
-          <Text
-            style={styles.navText}
-            onPress={() => navigation.navigate('Signup2Screen')}>
-            Sign Up
-          </Text>
+        <TouchableOpacity style={styles.bottomTextContainer}>
+          <View style={styles.bottomText}>
+            <Text style={styles.normalText}>Create a new Account ?</Text>
+            <Text
+              style={styles.navText}
+              onPress={() => navigation.navigate('Signup2Screen')}>
+              Sign Up
+            </Text>
+          </View>
         </TouchableOpacity>
       </View>
     </ScrollView>
@@ -135,11 +141,16 @@ const styles = StyleSheet.create({
     textAlign: 'center',
     fontSize: 18,
   },
+  bottomTextContainer: {
+    flexDirection: 'row',
+    width: width - 50,
+    justifyContent: 'flex-end',
+    alignSelf: 'center',
+    alignItems: 'center',
+    margin: 20,
+  },
   bottomText: {
     flexDirection: 'row',
-    marginVertical: 10,
-    width: '90%',
-    justifyContent: 'flex-end',
   },
   normalText: {
     color: '#000',
@@ -149,5 +160,17 @@ const styles = StyleSheet.create({
     color: '#14A800',
     fontSize: 16,
     marginLeft: 5,
+  },
+  checkboxContainer: {
+    flexDirection: 'row',
+    width: width - 50,
+
+    alignSelf: 'center',
+    alignItems: 'center',
+  },
+  forgotpass: {
+    position: 'absolute',
+    right: 0,
+    color: '#14A800',
   },
 });

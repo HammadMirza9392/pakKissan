@@ -15,7 +15,7 @@ import {SelectList} from 'react-native-dropdown-select-list';
 import RadioButtonRN from 'radio-buttons-react-native';
 import dropdownIcon from './assets/Group_10.png';
 
-const AddLabour = () => {
+const AddLand = ({navigation}) => {
   const [selected, setSelected] = useState('');
 
   const laboutType = [
@@ -30,70 +30,19 @@ const AddLabour = () => {
   ];
   const wageType = [
     {
-      label: 'Monthly Basis',
+      label: 'Owner’s Land',
     },
     {
-      label: 'Daily Basis',
+      label: 'Rental Land',
     },
   ];
-
   return (
     <ScrollView style={styles.mainContainer}>
-      <Header heading="Add Labour" />
+      <Header heading="Add Land" />
 
       <View style={styles.bodyContainer}>
-        <View style={{marginTop: 30}}>
-          <Text style={styles.label}>Name</Text>
-          <View style={styles.inptbox}>
-            <Image
-              source={require('./assets/Rectangle_156.png')}
-              style={styles.inptimg}
-            />
-            <TextInput
-              placeholderTextColor={'#848e90'}
-              placeholder="Write Name of Labour..."
-              style={styles.input}
-            />
-          </View>
-        </View>
-
         <View style={{marginTop: 20}}>
-          <Text style={styles.label}>Type of Labour</Text>
-          <View style={{marginTop: 10}}>
-            <View style={styles.dropdownbox}>
-              <Image source={dropdownIcon} style={styles.dropdownImg} />
-              <SelectList
-                setSelected={val => setSelected(val)}
-                data={laboutType}
-                save="value"
-                boxStyles={{
-                  borderWidth: 0,
-                  width: 300,
-                  marginLeft: 20,
-                }}
-                inputStyles={styles.dropdowninpt}
-                dropdownStyles={{borderWidth: 0}}
-                dropdownTextStyles={styles.dropdowninptdrop}
-                placeholder="select labour"
-                maxHeight={150}
-              />
-              {/* <SelectList
-              setSelected={val => setSelected(val)}
-              data={labourName}
-              save="value"
-              boxStyles={{borderColor: '#14A800', borderRadius: 40}}
-              inputStyles={styles.dropdowninpt}
-              dropdownStyles={{borderColor: '#14A800'}}
-              dropdownTextStyles={styles.dropdowninptdrop}
-              placeholder="select labour"
-              maxHeight={150}
-            /> */}
-            </View>
-          </View>
-        </View>
-
-        <View style={{marginTop: 20}}>
-          <Text style={styles.label}>Choose Wage Type</Text>
+          <Text style={styles.label}>Choose Type</Text>
           <View style={styles.radioBox}>
             <RadioButtonRN
               data={wageType}
@@ -107,6 +56,35 @@ const AddLabour = () => {
           </View>
         </View>
 
+        <View style={{marginTop: 30}}>
+          <Text style={styles.label}>Land Name</Text>
+          <View style={styles.inptbox}>
+            <Image
+              source={require('./assets/Group_10.png')}
+              style={styles.inptimg}
+            />
+            <TextInput
+              placeholderTextColor={'#848e90'}
+              placeholder="Enter Land Name ..."
+              style={styles.input}
+            />
+          </View>
+        </View>
+
+        <View style={{marginTop: 10}}>
+          <View style={styles.inptbox}>
+            <Image
+              source={require('./assets/Group_16.png')}
+              style={styles.inptimg}
+            />
+            <TextInput
+              placeholderTextColor={'#848e90'}
+              placeholder="Enter Aera of Land ..."
+              style={styles.input}
+            />
+          </View>
+        </View>
+
         <TouchableOpacity style={styles.globalbtn}>
           <Text style={styles.globalbtnText}>Submit</Text>
         </TouchableOpacity>
@@ -115,7 +93,7 @@ const AddLabour = () => {
   );
 };
 
-export default AddLabour;
+export default AddLand;
 
 const styles = StyleSheet.create({
   mainContainer: {

@@ -13,9 +13,8 @@ import Header from './Global/Header';
 import {SelectList} from 'react-native-dropdown-select-list';
 import DateTimePickerModal from 'react-native-modal-datetime-picker';
 const {height, width} = Dimensions.get('window');
-import IconButton from './Global/IconButton';
 import ActiveLabour from './Global/ActiveLabour';
-import {icon1} from './assets/Group_2.png';
+import dropdownIcon from './assets/Rectangle_156.png';
 
 const Attendance = ({navigation}) => {
   const [selected, setSelected] = useState('');
@@ -49,19 +48,37 @@ const Attendance = ({navigation}) => {
     <ScrollView style={styles.mainContainer}>
       <Header heading="Labour Attendance" />
       <View style={styles.bodyContainer}>
-        <View style={styles.dropdownStyle}>
+        <View>
           <Text style={styles.label}>Labour Name</Text>
-          <SelectList
-            setSelected={val => setSelected(val)}
-            data={labourName}
-            save="value"
-            boxStyles={{borderColor: '#14A800', borderRadius: 40}}
-            inputStyles={styles.dropdowninpt}
-            dropdownStyles={{borderColor: '#14A800'}}
-            dropdownTextStyles={styles.dropdowninptdrop}
-            placeholder="select labour"
-            maxHeight={150}
-          />
+          <View style={styles.dropdownbox}>
+            <Image source={dropdownIcon} style={styles.dropdownImg} />
+            <SelectList
+              setSelected={val => setSelected(val)}
+              data={labourName}
+              save="value"
+              boxStyles={{
+                borderWidth: 0,
+                width: 300,
+                marginLeft: 20,
+              }}
+              inputStyles={styles.dropdowninpt}
+              dropdownStyles={{borderWidth: 0}}
+              dropdownTextStyles={styles.dropdowninptdrop}
+              placeholder="select labour"
+              maxHeight={150}
+            />
+            {/* <SelectList
+              setSelected={val => setSelected(val)}
+              data={labourName}
+              save="value"
+              boxStyles={{borderColor: '#14A800', borderRadius: 40}}
+              inputStyles={styles.dropdowninpt}
+              dropdownStyles={{borderColor: '#14A800'}}
+              dropdownTextStyles={styles.dropdowninptdrop}
+              placeholder="select labour"
+              maxHeight={150}
+            /> */}
+          </View>
         </View>
         <View>
           <TouchableOpacity style={styles.selectDate}>
@@ -109,13 +126,22 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     marginVertical: 40,
   },
-  dropdownStyle: {
-    width: width - 50,
+  dropdownbox: {
+    borderColor: '#14A800',
+    borderWidth: 1,
+    borderRadius: 40,
+    flexDirection: 'row',
+    paddingLeft: 20,
+    padding: 5,
+    alignItems: 'center',
+    justifyContent: 'center',
   },
-  label: {
-    color: '#484848',
-    marginLeft: 15,
-    marginVertical: 8,
+  dropdownImg: {
+    width: 25,
+    height: 25,
+    position: 'absolute',
+    top: 12,
+    left: 20,
   },
   dropdowninpt: {
     color: '#14A800',
@@ -123,6 +149,12 @@ const styles = StyleSheet.create({
   },
   dropdowninptdrop: {
     color: '#14A800',
+    width: 260,
+  },
+  label: {
+    color: '#484848',
+    marginLeft: 15,
+    marginVertical: 8,
   },
   selectDate: {
     borderColor: '#14A800',

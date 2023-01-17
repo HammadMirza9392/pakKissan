@@ -61,13 +61,15 @@ const Signup = ({navigation}) => {
           <Text style={styles.globalbtnText}>Sign Up</Text>
         </TouchableOpacity>
 
-        <TouchableOpacity style={styles.bottomText}>
-          <Text style={styles.normalText}>Already have an Account ?</Text>
-          <Text
-            style={styles.navText}
-            onPress={() => navigation.navigate('SigninScreen')}>
-            Login
-          </Text>
+        <TouchableOpacity style={styles.bottomTextContainer}>
+          <View style={styles.bottomText}>
+            <Text style={styles.normalText}>Already have an Account ?</Text>
+            <Text
+              style={styles.navText}
+              onPress={() => navigation.navigate('SigninScreen')}>
+              Login
+            </Text>
+          </View>
         </TouchableOpacity>
       </View>
     </ScrollView>
@@ -146,5 +148,16 @@ const styles = StyleSheet.create({
     color: '#14A800',
     fontSize: 16,
     marginLeft: 5,
+  },
+  bottomTextContainer: {
+    flexDirection: 'row',
+    width: width - 50,
+    justifyContent: 'flex-end',
+    alignSelf: 'center',
+    alignItems: 'center',
+    margin: 20,
+  },
+  bottomText: {
+    flexDirection: 'row',
   },
 });

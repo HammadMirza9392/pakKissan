@@ -14,8 +14,7 @@ const {height, width} = Dimensions.get('window');
 import {SelectList} from 'react-native-dropdown-select-list';
 import RadioButtonRN from 'radio-buttons-react-native';
 import dropdownIcon from './assets/Group_10.png';
-
-const AddLabour = () => {
+const AddCrop = () => {
   const [selected, setSelected] = useState('');
 
   const laboutType = [
@@ -28,37 +27,13 @@ const AddLabour = () => {
     {key: 7, value: 'Demo 2'},
     {key: 8, value: 'Demo 3'},
   ];
-  const wageType = [
-    {
-      label: 'Monthly Basis',
-    },
-    {
-      label: 'Daily Basis',
-    },
-  ];
-
   return (
     <ScrollView style={styles.mainContainer}>
-      <Header heading="Add Labour" />
+      <Header heading="Add Crop" />
 
       <View style={styles.bodyContainer}>
         <View style={{marginTop: 30}}>
-          <Text style={styles.label}>Name</Text>
-          <View style={styles.inptbox}>
-            <Image
-              source={require('./assets/Rectangle_156.png')}
-              style={styles.inptimg}
-            />
-            <TextInput
-              placeholderTextColor={'#848e90'}
-              placeholder="Write Name of Labour..."
-              style={styles.input}
-            />
-          </View>
-        </View>
-
-        <View style={{marginTop: 20}}>
-          <Text style={styles.label}>Type of Labour</Text>
+          <Text style={styles.label}>Choose Type</Text>
           <View style={{marginTop: 10}}>
             <View style={styles.dropdownbox}>
               <Image source={dropdownIcon} style={styles.dropdownImg} />
@@ -74,35 +49,35 @@ const AddLabour = () => {
                 inputStyles={styles.dropdowninpt}
                 dropdownStyles={{borderWidth: 0}}
                 dropdownTextStyles={styles.dropdowninptdrop}
-                placeholder="select labour"
+                placeholder="Enter Type of Crop"
                 maxHeight={150}
               />
-              {/* <SelectList
-              setSelected={val => setSelected(val)}
-              data={labourName}
-              save="value"
-              boxStyles={{borderColor: '#14A800', borderRadius: 40}}
-              inputStyles={styles.dropdowninpt}
-              dropdownStyles={{borderColor: '#14A800'}}
-              dropdownTextStyles={styles.dropdowninptdrop}
-              placeholder="select labour"
-              maxHeight={150}
-            /> */}
             </View>
           </View>
         </View>
 
         <View style={{marginTop: 20}}>
-          <Text style={styles.label}>Choose Wage Type</Text>
-          <View style={styles.radioBox}>
-            <RadioButtonRN
-              data={wageType}
-              selectedBtn={e => console.log(e)}
-              boxStyle={{
-                borderColor: '#14A800',
-                borderRadius: 30,
-              }}
-              activeColor="#14A800"
+          <Text style={styles.label}>Crop Season</Text>
+          <View style={styles.inptbox}>
+            <Image source={dropdownIcon} style={styles.inptimg} />
+            <TextInput
+              placeholderTextColor={'#848e90'}
+              placeholder="Spring 2022 - wheat"
+              style={styles.input}
+            />
+          </View>
+        </View>
+        <View style={{marginTop: 20}}>
+          <Text style={styles.label}>Area of Crop</Text>
+          <View style={styles.inptbox}>
+            <Image
+              source={require('./assets/Group_16.png')}
+              style={styles.inptimg}
+            />
+            <TextInput
+              placeholderTextColor={'#848e90'}
+              placeholder="Enter Area of Land"
+              style={styles.input}
             />
           </View>
         </View>
@@ -115,7 +90,7 @@ const AddLabour = () => {
   );
 };
 
-export default AddLabour;
+export default AddCrop;
 
 const styles = StyleSheet.create({
   mainContainer: {
@@ -192,12 +167,5 @@ const styles = StyleSheet.create({
   dropdowninptdrop: {
     color: '#14A800',
     width: 260,
-  },
-  radioBox: {
-    width: width - 50,
-    marginVertical: 10,
-  },
-  radioinpt: {
-    borderColor: '#14A800',
   },
 });
