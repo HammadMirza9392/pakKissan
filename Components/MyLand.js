@@ -45,7 +45,6 @@ const MyLand = () => {
           return <LandItem title={item.title} />;
         }}
       />
-      <View style={styles.bottomspace}></View>
     </View>
   );
 };
@@ -54,13 +53,4 @@ export default MyLand;
 
 const styles = StyleSheet.create({
   boxContainer: {},
-  bottomspace: {
-    backgroundColor: '#fff',
-    position: 'absolute',
-    height: 30,
-    width: '100%',
-    bottom: 0,
-    borderTopLeftRadius: 20,
-    borderTopRightRadius: 20,
-  },
 });

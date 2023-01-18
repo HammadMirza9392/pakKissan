@@ -10,10 +10,11 @@ import {
 } from 'react-native';
 import React, {useState} from 'react';
 import Header from './Global/Header';
-const {height, width} = Dimensions.get('window');
 import {SelectList} from 'react-native-dropdown-select-list';
 import RadioButtonRN from 'radio-buttons-react-native';
 import dropdownIcon from './assets/Group_10.png';
+
+const {height, width} = Dimensions.get('window');
 
 const AddLabour = () => {
   const [selected, setSelected] = useState('');

@@ -46,7 +46,6 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
   imgContainer: {
-    // width: '20%',
     position: 'absolute',
     left: 0,
   },

@@ -14,7 +14,7 @@ const {height, width} = Dimensions.get('window');
 import {SelectList} from 'react-native-dropdown-select-list';
 import RadioButtonRN from 'radio-buttons-react-native';
 import dropdownIcon from './assets/Group_10.png';
-const AddCrop = () => {
+const AddCrop = ({navigation}) => {
   const [selected, setSelected] = useState('');
 
   const laboutType = [
@@ -82,7 +82,9 @@ const AddCrop = () => {
           </View>
         </View>
 
-        <TouchableOpacity style={styles.globalbtn}>
+        <TouchableOpacity
+          style={styles.globalbtn}
+          onPress={() => navigation.navigate('Add Labour')}>
           <Text style={styles.globalbtnText}>Submit</Text>
         </TouchableOpacity>
       </View>

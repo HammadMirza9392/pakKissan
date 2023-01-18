@@ -14,35 +14,41 @@ import btn2 from './assets/Rectangle_33.png';
 import btn3 from './assets/Rectangle_34.png';
 import IconButton from './Global/IconButton';
 
-const Home = ({navigation}) => {
+const Profile = ({navigation}) => {
   const navtab = screen => {
-    if (screen === 'SellGoodScreen') {
-      navigation.navigate('SellGoodScreen');
-    } else if (screen === 'AttendanceScreen') {
-      navigation.navigate('AttendanceScreen');
+    if (screen === 'Sell Good') {
+      navigation.navigate('Sell Good');
+    } else if (screen === 'Attendance') {
+      navigation.navigate('Attendance');
+    } else {
+      navigation.navigate('Expenses');
     }
   };
   return (
     <View style={styles.mainContainer}>
       <Header heading="Mehra" />
       <View style={styles.bodyContainer}>
-        <IconButton img={btn1} btnText="Add Expenses" />
+        <IconButton
+          img={btn1}
+          btnText="Add Expenses"
+          onPressbtn={() => navtab('Expenses')}
+        />
         <IconButton
           img={btn2}
           btnText="Sell Goods"
-          onPressbtn={() => navtab('SellGoodScreen')}
+          onPressbtn={() => navtab('Sell Good')}
         />
         <IconButton
           img={btn3}
           btnText="Attendance"
-          onPressbtn={() => navtab('AttendanceScreen')}
+          onPressbtn={() => navtab('Attendance')}
         />
       </View>
     </View>
   );
 };
 
-export default Home;
+export default Profile;
 
 const styles = StyleSheet.create({
   mainContainer: {

@@ -61,7 +61,9 @@ const Expenses = ({navigation}) => {
           </View>
         </View>
 
-        <TouchableOpacity style={styles.globalbtn}>
+        <TouchableOpacity
+          style={styles.globalbtn}
+          onPress={() => navigation.navigate('Add Crop')}>
           <Text style={styles.globalbtnText}>Submit</Text>
         </TouchableOpacity>
       </View>

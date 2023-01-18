@@ -1,12 +1,14 @@
-import {StyleSheet, Text, View} from 'react-native';
+import {StyleSheet, Text, TouchableOpacity, Image, View} from 'react-native';
 import React from 'react';
-import {Image} from 'react-native';
 
 const LabourManage = () => {
   return (
     <View style={styles.mainContainer}>
-      <Image source={require('./assets/myLandBg.png')} />
-      <Text>LabourManage</Text>
+      {/* <TouchableOpacity>
+        <Image source={require('./assets/myLandBg.png')} />
+      </TouchableOpacity> */}
+
+      <Text style={{color: '#000', fontSize: 40}}>LabourManage</Text>
     </View>
   );
 };

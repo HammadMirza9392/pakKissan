@@ -10,6 +10,7 @@ import {
 } from 'react-native';
 import React, {useState} from 'react';
 import CheckBox from '@react-native-community/checkbox';
+
 const {height, width} = Dimensions.get('window');
 
 const Signup = ({navigation}) => {
@@ -54,12 +55,10 @@ const Signup = ({navigation}) => {
             disabled={false}
             value={toggleCheckBox}
             onValueChange={newValue => setToggleCheckBox(newValue)}
-            //style={{color: 'red', tintColor: 'blue', onCheckColor: 'pink'}}
-            tintColor="blue"
-            onCheckColor="pink"
-            onTintColor="gray"
+            tintColors={'#14A800'}
+            onCheckColor={'pink'}
+            onTintColor={'#14A800'}
           />
-
           <Text style={{color: '#14A800'}}>Keep me logged in</Text>
           <Text style={styles.forgotpass}>Forget Password</Text>
         </View>
@@ -164,7 +163,6 @@ const styles = StyleSheet.create({
   checkboxContainer: {
     flexDirection: 'row',
     width: width - 50,
-
     alignSelf: 'center',
     alignItems: 'center',
   },

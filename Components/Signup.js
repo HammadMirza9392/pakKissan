@@ -66,7 +66,7 @@ const Signup = ({navigation}) => {
             <Text style={styles.normalText}>Already have an Account ?</Text>
             <Text
               style={styles.navText}
-              onPress={() => navigation.navigate('SigninScreen')}>
+              onPress={() => navigation.navigate('DrawerNavScreen')}>
               Login
             </Text>
           </View>

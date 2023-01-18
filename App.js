@@ -16,7 +16,7 @@ import MyLand from './Components/MyLand';
 import LabourManage from './Components/LabourManage';
 import Splash from './Components/Splash';
 import LandItem from './Components/Global/LandItem';
-import Home from './Components/Home';
+import Profile from './Components/Profile';
 import Attendance from './Components/Attendance';
 import SellGood from './Components/SellGood';
 import IconButton from './Components/Global/IconButton';
@@ -26,16 +26,13 @@ import Expenses from './Components/Expenses';
 import PaymentClearence from './Components/PaymentClearence';
 import AddLabour from './Components/AddLabour';
 import Signup2 from './Components/Signup2';
-import Test from './Components/Test';
 import Signin2 from './Components/Signin2';
 import AddCrop from './Components/AddCrop';
 import MainHome from './Components/MainHome';
 import AddLand from './Components/AddLand';
+import DrawerNav from './Components/DrawerNav';
 
-const Drawer = createDrawerNavigator();
 const Stack = createNativeStackNavigator();
-
-const {height, width} = Dimensions.get('window');
 
 const App = () => {
   return (
@@ -57,11 +54,31 @@ const App = () => {
           options={{headerShown: false}}
         />
         <Stack.Screen
-          name="HomeScreen"
-          component={Home}
+          name="Signup2Screen"
+          component={Signup2}
           options={{headerShown: false}}
         />
         <Stack.Screen
+          name="Signin2Screen"
+          component={Signin2}
+          options={{headerShown: false}}
+        />
+        <Stack.Screen
+          name="DrawerNavScreen"
+          component={DrawerNav}
+          options={{headerShown: false}}
+        />
+        <Stack.Screen
+          name="Expenses"
+          component={Expenses}
+          options={{headerShown: false}}
+        />
+        {/* <Stack.Screen
+          name="Profile"
+          component={Profile}
+          options={{headerShown: false}}
+        />
+         <Stack.Screen
           name="AttendanceScreen"
           component={Attendance}
           options={{headerShown: false}}
@@ -91,16 +108,7 @@ const App = () => {
           component={AddLabour}
           options={{headerShown: false}}
         />
-        <Stack.Screen
-          name="Signup2Screen"
-          component={Signup2}
-          options={{headerShown: false}}
-        />
-        <Stack.Screen
-          name="Signin2Screen"
-          component={Signin2}
-          options={{headerShown: false}}
-        />
+       
         <Stack.Screen
           name="AddCropScreen"
           component={AddCrop}
@@ -115,21 +123,8 @@ const App = () => {
           name="AddLandScreen"
           component={AddLand}
           options={{headerShown: false}}
-        />
-        <Stack.Screen
-          name="TestScreen"
-          component={Test}
-          options={{headerShown: false}}
-        />
+        /> */}
       </Stack.Navigator>
-      {/* <Drawer.Navigator>
-        <Drawer.Screen
-          name="Feed"
-          component={MainHome}
-          options={{headerTitleAlign: 'center'}}
-        />
-        <Drawer.Screen name="Article" component={AddLand} />
-      </Drawer.Navigator> */}
     </NavigationContainer>
   );
 };

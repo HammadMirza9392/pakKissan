@@ -7,11 +7,10 @@ import {
   Dimensions,
 } from 'react-native';
 import React from 'react';
-import {NavigationContainer} from '@react-navigation/native';
+
 import {createMaterialTopTabNavigator} from '@react-navigation/material-top-tabs';
-import LandItem from './Global/LandItem';
+import LandItem from './SellGood';
 import MyLand from './MyLand';
-import LabourManage from './LabourManage';
 
 const Tab = createMaterialTopTabNavigator();
 
@@ -52,7 +51,7 @@ const MainHome = ({navigation}) => {
             />
             <Text
               style={styles.topText}
-              onPress={() => navigation.navigate('AddLandScreen')}>
+              onPress={() => navigation.navigate('Add Land')}>
               Add Land
             </Text>
           </View>
