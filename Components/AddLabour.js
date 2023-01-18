@@ -195,7 +195,7 @@ const styles = StyleSheet.create({
     width: 260,
   },
   radioBox: {
-    width: width - 50,
+    width: 200,
     marginVertical: 10,
   },
   radioinpt: {

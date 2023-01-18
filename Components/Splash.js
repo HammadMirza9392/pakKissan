@@ -5,7 +5,7 @@ const {height, width} = Dimensions.get('window');
 const Splash = ({navigation}) => {
   useEffect(() => {
     setTimeout(() => {
-      navigation.navigate('SigninScreen');
+      navigation.navigate('DrawerNavScreen');
     }, 3000);
   }, []);
   return (

@@ -73,6 +73,11 @@ const App = () => {
           component={Expenses}
           options={{headerShown: false}}
         />
+        <Stack.Screen
+          name="Home"
+          component={MainHome}
+          options={{headerShown: false}}
+        />
         {/* <Stack.Screen
           name="Profile"
           component={Profile}

@@ -55,9 +55,11 @@ const Signup = ({navigation}) => {
             disabled={false}
             value={toggleCheckBox}
             onValueChange={newValue => setToggleCheckBox(newValue)}
-            tintColors={'#14A800'}
-            onCheckColor={'pink'}
-            onTintColor={'#14A800'}
+            //tintColors={'#14A800'}
+            //onCheckColor="#000"
+            //onTintColor={'#14A800'}
+            //onFillColor="#000"
+            tintColors={true ? '#000' : 'gray'}
           />
           <Text style={{color: '#14A800'}}>Keep me logged in</Text>
           <Text style={styles.forgotpass}>Forget Password</Text>
