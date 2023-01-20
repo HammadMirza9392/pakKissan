@@ -39,12 +39,14 @@ const CustomSidebarMenu = props => {
               alignItems: 'center',
             }}>
             <Image
-              source={require('./../assets/Group_25.png')}
+              source={require('./../assets/profile.jpg')}
               style={styles.profileimg}
             />
             <View style={styles.profileTextBox}>
-              <Text style={{color: '#fff', fontSize: 16}}>Sajjad Ahmad</Text>
-              <Text style={{color: '#fff', fontSize: 14}}>Owner</Text>
+              <Text style={{color: '#fff', fontSize: 16, fontWeight: 'bold'}}>
+                Hammad Mirza
+              </Text>
+              <Text style={{color: '#fff', fontSize: 14}}>Owner </Text>
             </View>
           </View>
         </View>
@@ -81,6 +83,7 @@ const styles = StyleSheet.create({
   profileimg: {
     width: 80,
     height: 80,
+    borderRadius: 80,
   },
   profileTextBox: {
     marginHorizontal: 10,
